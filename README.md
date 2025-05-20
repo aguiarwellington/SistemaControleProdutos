@@ -1,2 +1,2 @@
 # SistemaControleProdutos
-Sistema de controle de produtos em java 
+Sistema de controle de produtos com java 
