@@ -1,0 +1,6 @@
+/mysql-data/
+/out/
+/.idea/
+/*.iml
+*.log
+*.sock
