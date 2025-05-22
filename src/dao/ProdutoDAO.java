@@ -9,6 +9,23 @@ import java.util.List;
 
 public class ProdutoDAO {
 
+    public void deletarProduto(Produto produto){
+        String sql = "DELETE FROM produtos WHERE id = ? ";
+
+        try (Connection conn = Conexao.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, produto.getId());
+
+            stmt.executeUpdate();
+            System.out.println("Produto Deletado com sucesso!");
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao deletar o  produto: " + e.getMessage());
+        }
+
+    }
+
     public void inserirProduto(Produto produto) {
         String sql = "INSERT INTO produtos (nome, preco, quantidade) VALUES (?, ?, ?)";
 

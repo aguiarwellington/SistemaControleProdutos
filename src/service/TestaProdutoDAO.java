@@ -14,6 +14,7 @@ public class TestaProdutoDAO {
         System.out.println("Escolha uma opção:");
         System.out.println("1 - Inserir produto");
         System.out.println("2 - Listar produtos");
+        System.out.println("3 - Deletar produto");
         System.out.print("Opção: ");
         int opcao = sc.nextInt();
         sc.nextLine(); // consumir quebra de linha
@@ -39,6 +40,16 @@ public class TestaProdutoDAO {
                     System.out.printf("ID: %d | Nome: %s | Preço: %.2f | Qtd: %d%n",
                             p.getId(), p.getNome(), p.getPreco(), p.getQuantidade());
                 }
+                break;
+
+            case 3:
+                System.out.println("Informe o id do produto a ser deletado");
+                int idParaDeletar = sc.nextInt();
+
+                Produto produtoParaDeletar = new Produto();
+                produtoParaDeletar.setId(idParaDeletar);
+
+                dao.deletarProduto(produtoParaDeletar);
                 break;
 
             default:
